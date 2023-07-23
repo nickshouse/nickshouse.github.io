@@ -5,7 +5,7 @@ body {
     background: #f0f0f0;
 }
 
-
+/* Hamburger button styling */
 .hamburger {
     position: fixed;
     top: 10px;
