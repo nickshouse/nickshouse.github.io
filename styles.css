@@ -21,15 +21,16 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: 0;
     width: 250px;
     height: 100%;
     background: #333;
     color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    padding: 60px 0 0 15px;
+    padding-top: 60px;
     z-index: 999;
+    transform: translateX(-100%);
 }
 
 .sidebar a {
@@ -46,7 +47,7 @@ body {
 }
 
 .sidebar.active {
-    left: 0;
+    transform: translateX(0);
 }
 
 h1 {
