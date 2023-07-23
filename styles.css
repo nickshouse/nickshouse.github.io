@@ -22,15 +22,15 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 0;
     height: 100%;
     background: #333;
     color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding: 60px 0px 0px 0px;
     z-index: 999;
-    transform: translateX(-100%);
+    box-sizing: border-box;
 }
 
 .sidebar a {
@@ -47,7 +47,8 @@ body {
 }
 
 .sidebar.active {
-    transform: translateX(0);
+    width: 250px;
+    padding: 60px 0px 0px 15px;
 }
 
 h1 {
