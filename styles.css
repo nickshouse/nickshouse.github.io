@@ -27,11 +27,12 @@ h1 {
     overflow: hidden;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .project:hover {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    transform: scale(1.05);
 }
 
 .project-title {
