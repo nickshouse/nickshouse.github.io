@@ -36,7 +36,4 @@ window.onload = function() {
             document.documentElement.setAttribute('data-theme', 'light');
         }
     });
-
-    // Default to dark mode
-    document.documentElement.setAttribute('data-theme', 'dark');
 };
