@@ -11,8 +11,10 @@ window.onload = function() {
         const projectElement = document.createElement('div');
         projectElement.className = 'project';
         projectElement.innerHTML = `
-            <h2 class="project-title"><a class="project-link" href="${project.link}" target="_blank">${project.name}</a></h2>
-            <p>Check this project on <a class="project-link" href="${project.link}" target="_blank">GitHub</a></p>
+            <a class="project-link" href="${project.link}" target="_blank">
+                <h2 class="project-title">${project.name}</h2>
+                <p>Check this project on GitHub</p>
+            </a>
         `;
         projectsContainer.appendChild(projectElement);
     }
