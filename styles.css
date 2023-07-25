@@ -2,12 +2,16 @@
     --color-text: #fff;
     --color-bg: #060606;
     --color-btn: #fff;
+    --color-sidebar: #2d2d2d;
+    --color-footer: #3d3d3d;
 }
 
 [data-theme="light"] {
     --color-text: #000;
     --color-bg: #fff;
     --color-btn: #000;
+    --color-sidebar: #ddd;
+    --color-footer: #ccc;
 }
 
 body {
@@ -47,6 +51,7 @@ body {
     padding: 60px 0px 0px 0px;
     z-index: 999;
     box-sizing: border-box;
+    background-color: var(--color-sidebar);
 }
 
 .sidebar a {
@@ -118,6 +123,7 @@ footer {
     width: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
+    background-color: var(--color-footer);
 }
 
 .footer-content {
