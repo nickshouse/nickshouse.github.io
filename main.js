@@ -18,11 +18,26 @@ window.onload = function() {
         `;
         projectsContainer.appendChild(projectElement);
     }
+
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+    });
+
+    // Add theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('light-mode');
+        document.body.classList.toggle('dark-mode');
+
+        this.textContent = document.body.classList.contains('light-mode')
+            ? 'Switch to Dark Mode'
+            : 'Switch to Light Mode';
+    });
+
+    // Default to dark mode
+    document.body.classList.add('dark-mode');
 };
-
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-
-hamburger.addEventListener('click', function() {
-    sidebar.classList.toggle('active');
-});
