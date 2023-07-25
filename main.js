@@ -31,20 +31,11 @@ window.onload = function() {
 
     themeToggle.addEventListener('change', function() {
         if (this.checked) {
-            transition();
             document.documentElement.setAttribute('data-theme', 'light');
         } else {
-            transition();
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     });
-
-    let transition = () => {
-        document.documentElement.classList.add('transition');
-        window.setTimeout(() => {
-            document.documentElement.classList.remove('transition');
-        }, 1000)
-    }
 
     // Default to dark mode
     document.documentElement.setAttribute('data-theme', 'dark');
