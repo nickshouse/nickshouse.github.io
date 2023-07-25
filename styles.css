@@ -1,3 +1,15 @@
+:root {
+    --color-text: #fff;
+    --color-bg: #060606;
+    --color-btn: #fff;
+}
+
+[data-theme="light"] {
+    --color-text: #000;
+    --color-bg: #fff;
+    --color-btn: #000;
+}
+
 body {
     font-family: Arial, sans-serif;
     padding: 0;
@@ -5,28 +17,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }
 
-[data-theme="dark"] {
-    background-color: #060606;
-    color: #fff;
-}
-
-[data-theme="dark"] .hamburger {
-    color: #fff;
-}
-
-[data-theme="light"] {
-    background-color: #fff;
-    color: #000;
-}
-
-[data-theme="light"] .hamburger {
-    color: #000;
-}
-
-/* Hamburger button styling */
 .hamburger {
     position: fixed;
     top: 10px;
@@ -36,6 +31,8 @@ body {
     border: none;
     z-index: 1000;
     cursor: pointer;
+    color: var(--color-btn);
+    transition: color 0.5s ease-out;
 }
 
 /* Sidebar menu styling */
