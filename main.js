@@ -27,17 +27,25 @@ window.onload = function() {
     });
 
     // Add theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById('checkbox');
 
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('light-mode');
-        document.body.classList.toggle('dark-mode');
-
-        this.textContent = document.body.classList.contains('light-mode')
-            ? 'Switch to Dark Mode'
-            : 'Switch to Light Mode';
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            transition();
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            transition();
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
     });
 
+    let transition = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('transition');
+        }, 1000)
+    }
+
     // Default to dark mode
-    document.body.classList.add('dark-mode');
+    document.documentElement.setAttribute('data-theme', 'dark');
 };
