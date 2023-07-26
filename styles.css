@@ -95,13 +95,7 @@ h1 {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: #4d4d4d; /* Add a background color */
-    border-radius: 15px; /* Round the corners */
-    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Add a shadow */
-    margin: 20px auto; /* Add some margin around the container */
-    max-width: 90%; /* Limit width to avoid touching screen edges */
 }
-
 
 .project {
     width: 300px;
