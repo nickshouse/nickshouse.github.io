@@ -98,13 +98,13 @@ h1 {
 
 .project {
     width: 300px;
-    border: 1px solid #ccc;
+    border: none;  /* Update this line */
     border-radius: 8px;
     overflow: hidden;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-    background-color: var(--color-sidebar); /* Add this line */
+    background-color: var(--color-sidebar);
 }
 
 .project:hover {
