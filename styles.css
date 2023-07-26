@@ -52,6 +52,7 @@ body {
     z-index: 999;
     box-sizing: border-box;
     background-color: var(--color-sidebar);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);  /* Add this line */
 }
 
 .sidebar ul {
