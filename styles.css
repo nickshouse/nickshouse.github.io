@@ -51,7 +51,7 @@ body {
     padding: 60px 0px 0px 0px;
     z-index: 999;
     box-sizing: border-box;
-    background-color: var(--color-bg);
+    background-color: #131313;
     box-shadow: 5px 0 15px rgba(0,0,0,0.2);  /* Add this line */
 }
 
