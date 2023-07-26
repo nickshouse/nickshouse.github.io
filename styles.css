@@ -95,7 +95,13 @@ h1 {
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    background-color: var(--color-sidebar);
+    border-radius: 15px; /* round the corners */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* add shadow */
+    margin: 20px auto; /* add some margin around the container */
+    max-width: 90%; /* limit width to avoid touching screen edges */
 }
+
 
 .project {
     width: 300px;
@@ -121,19 +127,7 @@ h1 {
 .project-link {
     color: inherit;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    border-radius: 15px; /* round the corners */
-    background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* subtle shadow */
-    transition: background-color 0.3s ease; /* transition for hover effect */
-}
-
-.project-link:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* slightly less transparent on hover */
+    display: block;
 }
 
 /* Footer styles */
