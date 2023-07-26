@@ -2,16 +2,16 @@
     --color-text: #fff;
     --color-bg: #060606;
     --color-btn: #fff;
-    --color-sidebar: #4d4d4d;
-    --color-footer: #4d4d4d;
+    --color-sidebar: #272727;
+    --color-footer: #272727;
 }
 
 [data-theme="light"] {
     --color-text: #000;
     --color-bg: #fff;
     --color-btn: #000;
-    --color-sidebar: #b3b3b3;
-    --color-footer: #b3b3b3;
+    --color-sidebar: #e3e3e3;
+    --color-footer: #e3e3e3;
 }
 
 body {
