@@ -51,7 +51,7 @@ body {
     padding: 60px 0px 0px 0px;
     z-index: 999;
     box-sizing: border-box;
-    background-color: var(--color-sidebar);
+    background-color: var(--color-bg);
     box-shadow: 5px 0 15px rgba(0,0,0,0.2);  /* Add this line */
 }
 
@@ -95,11 +95,11 @@ h1 {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: var(--color-sidebar);
-    border-radius: 15px; /* round the corners */
-    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* add shadow */
-    margin: 20px auto; /* add some margin around the container */
-    max-width: 90%; /* limit width to avoid touching screen edges */
+    background-color: #4d4d4d; /* Add a background color */
+    border-radius: 15px; /* Round the corners */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Add a shadow */
+    margin: 20px auto; /* Add some margin around the container */
+    max-width: 90%; /* Limit width to avoid touching screen edges */
 }
 
 
