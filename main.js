@@ -14,6 +14,11 @@ window.onload = function() {
             name: "Windows Stuff", 
             link: "https://github.com/nickshouse/Windows-Stuff",
             description: "A collection of scripts for managing Windows systems."
+        },
+        { 
+            name: "Chao Bot", 
+            link: "https://github.com/nickshouse/Chao-Bot",
+            description: "A Bot for Discord that simulates raising Chao from Sonic games."
         } 
     ];
 
