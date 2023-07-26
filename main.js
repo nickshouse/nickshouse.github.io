@@ -1,8 +1,20 @@
 window.onload = function() {
     const projects = [
-        { name: "Github Discord", link: "https://github.com/nickshouse/githubdiscord" },
-        { name: "Amazon Bot", link: "https://github.com/nickshouse/Amazon-Bot" },
-        { name: "Windows Stuff", link: "https://github.com/nickshouse/Windows-Stuff" }
+        { 
+            name: "DisHub", 
+            link: "https://github.com/nickshouse/githubdiscord",
+            description: "This is a project about integrating GitHub with Discord."
+        },
+        { 
+            name: "Amazon Bot", 
+            link: "https://github.com/nickshouse/Amazon-Bot",
+            description: "A bot to automate certain tasks on Amazon."
+        },
+        { 
+            name: "Windows Stuff", 
+            link: "https://github.com/nickshouse/Windows-Stuff",
+            description: "A collection of scripts for managing Windows systems."
+        }
     ];
 
     const projectsContainer = document.getElementById('projects');
@@ -13,7 +25,7 @@ window.onload = function() {
         projectElement.innerHTML = `
             <a class="project-link" href="${project.link}" target="_blank">
                 <h2 class="project-title">${project.name}</h2>
-                <p>Check this project on GitHub</p>
+                <p>${project.description}</p>
             </a>
         `;
         projectsContainer.appendChild(projectElement);
