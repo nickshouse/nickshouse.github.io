@@ -14,7 +14,7 @@ window.onload = function() {
             name: "Windows Stuff", 
             link: "https://github.com/nickshouse/Windows-Stuff",
             description: "A collection of scripts for managing Windows systems."
-        }
+        } 
     ];
 
     const projectsContainer = document.getElementById('projects');
