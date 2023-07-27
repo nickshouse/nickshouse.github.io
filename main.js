@@ -59,21 +59,23 @@ function setupHamburgerMenu() {
 function setupThemeToggle() {
     const themeToggle = document.getElementById('checkbox');
 
-    // Load the stored theme
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-        document.documentElement.setAttribute('data-theme', storedTheme);
-        themeToggle.checked = (storedTheme === 'dark');
-    } else {
-        // If there's no stored theme, use the dark theme
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.checked = true;
-        localStorage.setItem('theme', 'dark');
-    }
+    // Check for a stored theme
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark';
+
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeToggle.checked = (currentTheme === 'dark');
 
     themeToggle.addEventListener('change', function() {
         const theme = this.checked ? 'dark' : 'light';
+        trans();
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     });
+
+    let trans = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('transition');
+        }, 1000);
+    };
 }

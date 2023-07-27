@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick's Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // This script sets the theme before the page is painted.
+        const storedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', storedTheme);
+    </script>
 </head>
 <body>
     <!-- Hamburger button -->
@@ -31,7 +36,7 @@
 
         <!-- Contact Section -->
         <div id="contact">
-          <!-- Add contact information or a form here -->
+            <!-- Add contact information or a form here -->
         </div>
     </div>
 
@@ -42,7 +47,7 @@
             <div class="theme-switch-wrapper">
                 <i class="fas fa-moon"></i>
                 <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" checked />
+                    <input type="checkbox" id="checkbox" />
                     <div class="slider round"></div>
                 </label>
             </div>
