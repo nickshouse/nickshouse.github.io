@@ -112,7 +112,7 @@ h1 {
 }
 
 .project {
-    width: 300px;
+    width: 250px; /* Adjusted from 300px to 250px */
     border: none;
     border-radius: 8px;
     overflow: hidden;
@@ -121,6 +121,7 @@ h1 {
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     background-color: var(--color-sidebar);
 }
+
 
 .project:hover {
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
