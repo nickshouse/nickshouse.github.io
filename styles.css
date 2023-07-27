@@ -57,7 +57,7 @@ body {
     height: 100%;
     overflow-x: hidden;
     transition: 0.5s;
-    padding: 60px 0px 0px 20px;
+    padding: 60px 0px 0px 0px; /* Remove left padding */
     z-index: 999;
     box-sizing: border-box;
     background-color: var(--color-sidebar);
@@ -72,7 +72,7 @@ body {
 }
 
 .sidebar a {
-    padding: 15px 15px 15px 30px;
+    padding: 15px 15px 15px 50px; /* Add left padding here instead */
     text-decoration: none;
     font-size: 25px;
     display: flex;
