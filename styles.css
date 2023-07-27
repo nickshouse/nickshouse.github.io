@@ -5,8 +5,9 @@
     --color-sidebar: #272727;
     --color-footer: #272727;
     --color-menu: #1a1a1a;
-    --color-btn-hover: #ddd;
-    --color-btn-active: #bbb;
+    --color-btn-hover: #eee;  /* Lighter white */
+    --color-btn-active: #ccc;  /* Darker white */
+    --color-btn-shadow: #fff;  /* Same as the button color */
 }
 
 [data-theme="light"] {
@@ -16,8 +17,9 @@
     --color-sidebar: #e9e9e9;
     --color-footer: #e9e9e9;
     --color-menu: #e9e9e9;
-    --color-btn-hover: #222;
-    --color-btn-active: #444;
+    --color-btn-hover: #333;  /* Darker black */
+    --color-btn-active: #666;  /* Lighter black */
+    --color-btn-shadow: #000;  /* Same as the button color */
 }
 
 body {
@@ -47,6 +49,7 @@ body {
 
 .hamburger:hover {
     color: var(--color-btn-hover);
+    box-shadow: 0 0 10px var(--color-btn-shadow);
 }
 
 .hamburger:active {
