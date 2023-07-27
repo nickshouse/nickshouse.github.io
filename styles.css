@@ -1,10 +1,10 @@
 :root {
-    --color-text: #fff;
-    --color-bg: #1a1a1a;
-    --color-btn: #fff;
-    --color-sidebar: #272727;
-    --color-footer: #272727;
-    --color-menu: #1a1a1a;
+    --color-text: #abb2bf;
+    --color-bg: #282c34;
+    --color-btn: #abb2bf;
+    --color-sidebar: #21252b;
+    --color-footer: #21252b;
+    --color-menu: #21252b;
 }
 
 [data-theme="light"] {
