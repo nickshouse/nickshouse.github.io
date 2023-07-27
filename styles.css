@@ -32,9 +32,9 @@ body {
 
 .hamburger {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: 30px;
+    top: 8px;
+    left: 8px;
+    font-size: 25px;
     background: none;
     border: none;
     z-index: 1000;
@@ -207,7 +207,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(20px); /* adjusted from 26px to 20px */
 }
 
 .slider.round {

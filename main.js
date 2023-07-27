@@ -64,6 +64,11 @@ function setupThemeToggle() {
     if (storedTheme) {
         document.documentElement.setAttribute('data-theme', storedTheme);
         themeToggle.checked = (storedTheme === 'dark');
+    } else {
+        // If there's no stored theme, use the dark theme
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.checked = true;
+        localStorage.setItem('theme', 'dark');
     }
 
     themeToggle.addEventListener('change', function() {
