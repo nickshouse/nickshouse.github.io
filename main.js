@@ -3,26 +3,22 @@ window.onload = function() {
         { 
             name: "DisHub", 
             link: "https://github.com/nickshouse/githubdiscord",
-            description: "This is a project about integrating GitHub with Discord.",
-            icon: "fas fa-code"
+            description: "This is a project about integrating GitHub with Discord."
         },
         { 
             name: "Amazon Bot", 
             link: "https://github.com/nickshouse/Amazon-Bot",
-            description: "A bot to automate certain tasks on Amazon.",
-            icon: "fas fa-robot"
+            description: "A bot to automate certain tasks on Amazon."
         },
         { 
             name: "Windows Stuff", 
             link: "https://github.com/nickshouse/Windows-Stuff",
-            description: "A collection of scripts for managing Windows systems.",
-            icon: "fas fa-windows"
+            description: "A collection of scripts for managing Windows systems."
         },
         { 
             name: "Chao Bot", 
             link: "https://github.com/nickshouse/Chao-Bot",
-            description: "A Bot for Discord that simulates raising Chao from Sonic games.",
-            icon: "fas fa-gamepad"
+            description: "A Bot for Discord that simulates raising Chao from Sonic games."
         } 
     ];
 
@@ -33,7 +29,7 @@ window.onload = function() {
         projectElement.className = 'project';
         projectElement.innerHTML = `
             <a class="project-link" href="${project.link}" target="_blank">
-                <h2 class="project-title">${project.name} <i class="${project.icon} icon-right"></i></h2>
+                <h2 class="project-title">${project.name}</h2>
                 <p>${project.description}</p>
             </a>
         `;
@@ -45,6 +41,15 @@ window.onload = function() {
 
     hamburger.addEventListener('click', function() {
         sidebar.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(event) {
+        const isClickInside = sidebar.contains(event.target);
+        const isHamburgerClicked = hamburger.contains(event.target);
+
+        if (!isClickInside && !isHamburgerClicked && sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
     });
 
     // Add theme toggle functionality
