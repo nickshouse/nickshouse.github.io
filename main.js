@@ -51,8 +51,15 @@ function setupHamburgerMenu() {
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
 
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function(event) {
+        event.stopPropagation();
         sidebar.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!sidebar.contains(event.target)) {
+            sidebar.classList.remove('active');
+        }
     });
 }
 
