@@ -45,18 +45,12 @@ window.onload = function() {
 
     // Add theme toggle functionality
     const themeToggle = document.getElementById('checkbox');
-    const moonSymbol = document.querySelector('.moon-symbol');
 
-    // set initial color
-    moonSymbol.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-text');
-    
     themeToggle.addEventListener('change', function() {
         if (this.checked) {
             document.documentElement.setAttribute('data-theme', 'dark');
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
         }
-        // set color of moon symbol according to theme
-        moonSymbol.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-text');
     });
 };
