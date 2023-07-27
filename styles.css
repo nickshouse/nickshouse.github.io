@@ -5,8 +5,7 @@
     --color-sidebar: #272727;
     --color-footer: #272727;
     --color-menu: #1a1a1a;
-    --color-hover-light: rgba(0, 0, 0, 0.2);
-    --color-hover-dark: rgba(255, 255, 255, 0.1);
+    --color-hover: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="light"] {
@@ -16,8 +15,7 @@
     --color-sidebar: #e9e9e9;
     --color-footer: #e9e9e9;
     --color-menu: #e9e9e9;
-    --color-hover-light: rgba(0, 0, 0, 0.2);
-    --color-hover-dark: rgba(255, 255, 255, 0.2);
+    --color-hover: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -36,17 +34,17 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    font-size: 25px;
+    font-size: 30px;
     background: none;
     border: none;
     z-index: 1000;
     cursor: pointer;
     color: var(--color-btn);
-    transition: color 0.5s ease-out, transform 0.3s ease-in-out;
+    transition: color 0.5s ease-out, transform 0.3s ease-in-out; /* Added transform */
 }
 
 .hamburger:hover {
-    transform: scale(1.2);
+    transform: scale(1.1); /* Added scale */
 }
 
 .sidebar {
@@ -57,7 +55,7 @@ body {
     height: 100%;
     overflow-x: hidden;
     transition: 0.5s;
-    padding: 60px 0px 0px 0px; /* Remove left padding */
+    padding: 60px 0px 0px 0px;
     z-index: 999;
     box-sizing: border-box;
     background-color: var(--color-sidebar);
@@ -72,25 +70,22 @@ body {
 }
 
 .sidebar a {
-    padding: 15px 15px 15px 50px; /* Add left padding here instead */
+    padding: 15px 15px 15px 30px;
     text-decoration: none;
     font-size: 25px;
-    display: flex;
+    display: flex; 
     align-items: center;
     transition: 0.3s;
     color: var(--color-text);
 }
 
 .sidebar a i {
-    margin-right: 10px;
+    margin-right: 10px; /* new */
 }
+
 
 .sidebar a:hover {
-    background-color: var(--color-hover-light);
-}
-
-[data-theme="light"] .sidebar a:hover {
-    background-color: var(--color-hover-dark);
+    background-color: var(--color-hover);
 }
 
 .sidebar.active {
@@ -106,7 +101,6 @@ h1 {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
 }
 
 #projects {
@@ -176,11 +170,13 @@ footer {
     height: 34px;
 }
 
-.theme-switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Adjusted from 60px to 50px */
+    height: 34px;
 }
+
 
 .slider {
     position: absolute;
