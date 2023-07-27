@@ -45,6 +45,7 @@ window.onload = function() {
 
     // Add theme toggle functionality
     const themeToggle = document.getElementById('checkbox');
+    const moonSymbol = document.querySelector('.moon-symbol');
 
     themeToggle.addEventListener('change', function() {
         if (this.checked) {
@@ -52,5 +53,6 @@ window.onload = function() {
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
         }
+        moonSymbol.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-text');
     });
 };
