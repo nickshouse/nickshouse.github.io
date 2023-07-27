@@ -44,10 +44,7 @@ window.onload = function() {
     });
 
     document.addEventListener('click', function(event) {
-        const isClickInside = sidebar.contains(event.target);
-        const isHamburgerClicked = hamburger.contains(event.target);
-
-        if (!isClickInside && !isHamburgerClicked && sidebar.classList.contains('active')) {
+        if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
             sidebar.classList.remove('active');
         }
     });
