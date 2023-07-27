@@ -5,7 +5,6 @@
     --color-sidebar: #272727;
     --color-footer: #272727;
     --color-menu: #1a1a1a;
-    --color-moon: #fff;
 }
 
 [data-theme="light"] {
@@ -15,7 +14,6 @@
     --color-sidebar: #e9e9e9;
     --color-footer: #e9e9e9;
     --color-menu: #e9e9e9;
-    --color-moon: #000;
 }
 
 body {
@@ -204,8 +202,8 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-.moon-symbol {
+.fa-moon {
     margin-right: 10px;
     font-size: 24px;
-    color: var(--color-moon);
+    color: var(--color-text);
 }
