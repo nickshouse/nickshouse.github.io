@@ -5,6 +5,8 @@
     --color-sidebar: #272727;
     --color-footer: #272727;
     --color-menu: #1a1a1a;
+    --color-btn-hover: #ddd;
+    --color-btn-active: #bbb;
 }
 
 [data-theme="light"] {
@@ -14,6 +16,8 @@
     --color-sidebar: #e9e9e9;
     --color-footer: #e9e9e9;
     --color-menu: #e9e9e9;
+    --color-btn-hover: #222;
+    --color-btn-active: #444;
 }
 
 body {
@@ -39,6 +43,14 @@ body {
     cursor: pointer;
     color: var(--color-btn);
     transition: color 0.5s ease-out;
+}
+
+.hamburger:hover {
+    color: var(--color-btn-hover);
+}
+
+.hamburger:active {
+    color: var(--color-btn-active);
 }
 
 .sidebar {
