@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     populateProjects();
     setupHamburgerMenu();
     setupThemeToggle();
@@ -34,7 +34,7 @@ function populateProjects() {
 
     const projectsContainer = document.getElementById('projects');
 
-    for (let project of projects) {
+    projects.forEach(project => {
         const projectElement = document.createElement('div');
         projectElement.className = 'project';
         projectElement.innerHTML = `
@@ -44,19 +44,19 @@ function populateProjects() {
             </a>
         `;
         projectsContainer.appendChild(projectElement);
-    }
+    });
 }
 
 function setupHamburgerMenu() {
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
 
-    hamburger.addEventListener('click', function(event) {
+    hamburger.addEventListener('click', event => {
         event.stopPropagation();
         sidebar.classList.toggle('active');
     });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', event => {
         if (!sidebar.contains(event.target)) {
             sidebar.classList.remove('active');
         }
@@ -65,9 +65,7 @@ function setupHamburgerMenu() {
 
 function setupThemeToggle() {
     const themeToggle = document.getElementById('checkbox');
-
-    // Check for a stored theme
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark';
+    const currentTheme = localStorage.getItem('theme') || 'dark';
 
     document.documentElement.setAttribute('data-theme', currentTheme);
     themeToggle.checked = (currentTheme === 'dark');
@@ -79,9 +77,9 @@ function setupThemeToggle() {
         localStorage.setItem('theme', theme);
     });
 
-    let trans = () => {
+    const trans = () => {
         document.documentElement.classList.add('transition');
-        window.setTimeout(() => {
+        setTimeout(() => {
             document.documentElement.classList.remove('transition');
         }, 1000);
     };

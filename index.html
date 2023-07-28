@@ -6,21 +6,12 @@
     <title>Nick's Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        // This script sets the theme before the page is painted.
-        const storedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', storedTheme);
-    </script>
 </head>
 <body>
-    <!-- Hamburger button -->
     <div id="hamburger-container">
-        <button id="hamburger" class="hamburger">
-            &#9776;
-        </button>
+        <button id="hamburger" class="hamburger">&#9776;</button>
     </div>
 
-    <!-- Sidebar menu -->
     <div id="sidebar" class="sidebar">
         <div class="menu">
             <a href="#home"><i class="fas fa-home menu-icon"></i> Home</a>
@@ -33,14 +24,11 @@
         <div id="projects">
             <!-- Projects will be added here by JavaScript -->
         </div>
-
-        <!-- Contact Section -->
         <div id="contact">
             <!-- Add contact information or a form here -->
         </div>
     </div>
 
-    <!-- Footer Section -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2023 nickshouse <br> All rights reserved</p>

@@ -1,4 +1,4 @@
-:root {
+:root, [data-theme="light"] {
     --color-text: #fff;
     --color-bg: #1a1a1a;
     --color-btn: #fff;
@@ -40,11 +40,11 @@ body {
     z-index: 1000;
     cursor: pointer;
     color: var(--color-btn);
-    transition: color 0.5s ease-out, transform 0.3s ease-in-out; /* Added transform */
+    transition: color 0.5s ease-out, transform 0.3s ease-in-out;
 }
 
 .hamburger:hover {
-    transform: scale(1.1); /* Added scale */
+    transform: scale(1.1);
 }
 
 .sidebar {
@@ -55,7 +55,7 @@ body {
     height: 100%;
     overflow-x: hidden;
     transition: 0.5s;
-    padding: 60px 0px 0px 0px;
+    padding: 60px 0;
     z-index: 999;
     box-sizing: border-box;
     background-color: var(--color-sidebar);
@@ -64,25 +64,24 @@ body {
 
 .menu {
     background-color: transparent;
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: none;
-    padding: 0px;
+    padding: 0;
 }
 
 .sidebar a {
-    padding: 15px 15px 15px 30px;
+    padding: 15px 30px;
     text-decoration: none;
     font-size: 25px;
-    display: flex; 
+    display: flex;
     align-items: center;
     transition: 0.3s;
     color: var(--color-text);
 }
 
 .sidebar a i {
-    margin-right: 10px; /* new */
+    margin-right: 10px;
 }
-
 
 .sidebar a:hover {
     background-color: var(--color-hover);
@@ -112,7 +111,7 @@ h1 {
 }
 
 .project {
-    width: 250px; /* Adjusted from 300px to 250px */
+    width: 250px;
     border: none;
     border-radius: 8px;
     overflow: hidden;
@@ -121,7 +120,6 @@ h1 {
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     background-color: var(--color-sidebar);
 }
-
 
 .project:hover {
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -164,21 +162,19 @@ footer {
     justify-content: flex-end;
 }
 
-.theme-switch input { 
+.theme-switch input {
     opacity: 0;
     width: 0;
     height: 0;
-    pointer-events: none; /* Added this line */
+    pointer-events: none;
 }
-
 
 .theme-switch {
     position: relative;
     display: inline-block;
-    width: 50px; /* Adjusted from 60px to 50px */
+    width: 50px;
     height: 34px;
 }
-
 
 .slider {
     position: absolute;
@@ -207,7 +203,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(20px); /* adjusted from 26px to 20px */
+    transform: translateX(20px);
 }
 
 .slider.round {
