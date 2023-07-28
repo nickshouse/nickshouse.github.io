@@ -87,4 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
     populateProjects();
     setupHamburgerMenu();
     setupThemeToggle();
+    document.body.classList.add('fade-in');
+});
+
+window.addEventListener('beforeunload', function () {
+    document.body.classList.add('fade-out');
 });

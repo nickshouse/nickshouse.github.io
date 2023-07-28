@@ -227,3 +227,13 @@ input:checked + .slider:before {
 .icon-right {
     float: right;
 }
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+body.fade-in {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
