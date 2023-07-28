@@ -106,11 +106,20 @@ h1 {
 }
 
 #projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    row-gap: 10px;
+    column-gap: 40px;
     padding: 20px;
+    justify-content: center;
+}
+
+@media (min-width: 1060px) {
+    #projects {
+        grid-template-columns: repeat(4, 250px);
+        max-width: 1060px;
+        margin: auto;
+    }
 }
 
 .project {
