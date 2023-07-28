@@ -85,4 +85,7 @@ function setupThemeToggle() {
             document.documentElement.classList.remove('transition');
         }, 1000);
     };
+
+    // Make the body visible now that the theme is loaded
+    document.body.style.visibility = 'visible';
 }
