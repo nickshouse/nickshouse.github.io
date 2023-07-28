@@ -1,3 +1,6 @@
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root, [data-theme="light"] {
     --color-text: #fff;
     --color-bg: #1a1a1a;
@@ -19,7 +22,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Use Roboto font as the first choice */
     padding: 0;
     margin: 0;
     display: flex;
