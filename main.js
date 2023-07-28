@@ -13,6 +13,18 @@ function populateProjects() {
             icon: "fas fa-code"
         },
         { 
+            name: "Cursor Cloak", 
+            link: "https://github.com/nickshouse/Cursor-Cloak",
+            description: "A fun project to hide the cursor with a cloak.",
+            icon: "fas fa-mouse-pointer"
+        },
+        { 
+            name: "Chao Bot", 
+            link: "https://github.com/nickshouse/Chao-Bot",
+            description: "This is a Discord bot that simulates raising Chao from the Sonic Adventure games. It is a large scoped project that is currently a work in progress.",
+            icon: "fas fa-gamepad"
+        },
+        { 
             name: "Amazon Bot", 
             link: "https://github.com/nickshouse/Amazon-Bot",
             description: "This is an unfinished automation bot.",
@@ -23,13 +35,9 @@ function populateProjects() {
             link: "https://github.com/nickshouse/Windows-Stuff",
             description: "A collection of scripts for managing Windows systems.",
             icon: "fas fa-windows"
-        },
-        { 
-            name: "Chao Bot", 
-            link: "https://github.com/nickshouse/Chao-Bot",
-            description: "This is a Discord bot that simulates raising Chao from the Sonic Adventure games. It is a large scoped project that is currently a work in progress.",
-            icon: "fas fa-gamepad"
-        } 
+        }
+
+
     ];
 
     const projectsContainer = document.getElementById('projects');
