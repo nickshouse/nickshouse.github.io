@@ -28,7 +28,7 @@ function populateProjects() {
 
     const projectsContainer = document.getElementById('projects');
 
-    for (let project of projects) {
+    projects.forEach(project => {
         const projectElement = document.createElement('div');
         projectElement.className = 'project';
         projectElement.innerHTML = `
@@ -38,20 +38,20 @@ function populateProjects() {
             </a>
         `;
         projectsContainer.appendChild(projectElement);
-    }
+    });
 }
 
 function setupHamburgerMenu() {
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
 
-    hamburger.addEventListener('click', function(event) {
+    hamburger.addEventListener('click', event => {
         event.stopPropagation();
         sidebar.classList.toggle('active');
         hamburger.classList.toggle('is-active');
     });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', event => {
         if (!sidebar.contains(event.target)) {
             sidebar.classList.remove('active');
             hamburger.classList.remove('is-active');
@@ -62,32 +62,25 @@ function setupHamburgerMenu() {
 function setupThemeToggle() {
     const themeToggle = document.getElementById('checkbox');
 
+    // Check for a stored theme
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeToggle.checked = (currentTheme === 'dark');
+
     themeToggle.addEventListener('change', function() {
-        if (this.checked) {
-            document.body.classList.remove('theme-light');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.body.classList.add('theme-light');
-            localStorage.setItem('theme', 'light');
-        }
+        const theme = this.checked ? 'dark' : 'light';
+        transition();
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
     });
 
-    // Check for a stored theme
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        themeToggle.checked = (currentTheme === 'dark');
-        if (currentTheme === 'light') {
-            document.body.classList.add('theme-light');
-        } else {
-            document.body.classList.remove('theme-light');
-        }
-    } else {
-        // Default theme is dark
-        document.body.classList.remove('theme-light');
-    }
-
-    // Make the body visible now that the theme is loaded
-    document.body.style.visibility = 'visible';
+    let transition = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('transition');
+        }, 1000);
+    };
 }
 
 document.addEventListener('DOMContentLoaded', function() {

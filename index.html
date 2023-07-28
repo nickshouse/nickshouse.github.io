@@ -6,6 +6,13 @@
     <title>Nick's Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Initially hide the body */
+        body {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 <body>
     <!-- Hamburger button -->
@@ -48,6 +55,17 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Inline script to immediately set the theme on page load
+        (function() {
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            setTimeout(function(){
+                document.body.style.opacity = '1'; // Fade in body
+            }, 50); // slight delay to allow for theme to be set
+        })();
+    </script>
 
     <script src="main.js"></script>
 </body>
