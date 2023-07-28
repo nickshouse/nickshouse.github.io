@@ -1,3 +1,6 @@
+/* Import Roboto Mono font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 :root, [data-theme="light"] {
     --color-text: #fff;
     --color-bg: #1a1a1a;
@@ -19,7 +22,7 @@
 }
 
 body {
-    font-family: 'Roboto Mono', Arial, sans-serif; /* Use Roboto font as the first choice */
+    font-family: 'Roboto Mono', Arial, sans-serif; /* Use Roboto Mono font as the first choice */
     padding: 0;
     margin: 0;
     display: flex;
@@ -29,6 +32,7 @@ body {
     color: var(--color-text);
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }
+
 
 .hamburger {
     position: fixed;
