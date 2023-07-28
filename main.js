@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function() {
+    populateProjects();
+    setupHamburgerMenu();
+    setupThemeToggle();
+});
+
 function populateProjects() {
     const projects = [
         { 
@@ -28,7 +34,7 @@ function populateProjects() {
 
     const projectsContainer = document.getElementById('projects');
 
-    projects.forEach(project => {
+    for (let project of projects) {
         const projectElement = document.createElement('div');
         projectElement.className = 'project';
         projectElement.innerHTML = `
@@ -38,23 +44,21 @@ function populateProjects() {
             </a>
         `;
         projectsContainer.appendChild(projectElement);
-    });
+    }
 }
 
 function setupHamburgerMenu() {
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
 
-    hamburger.addEventListener('click', event => {
+    hamburger.addEventListener('click', function(event) {
         event.stopPropagation();
         sidebar.classList.toggle('active');
-        hamburger.classList.toggle('is-active');
     });
 
-    document.addEventListener('click', event => {
+    document.addEventListener('click', function(event) {
         if (!sidebar.contains(event.target)) {
             sidebar.classList.remove('active');
-            hamburger.classList.remove('is-active');
         }
     });
 }
@@ -63,33 +67,22 @@ function setupThemeToggle() {
     const themeToggle = document.getElementById('checkbox');
 
     // Check for a stored theme
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark';
 
     document.documentElement.setAttribute('data-theme', currentTheme);
     themeToggle.checked = (currentTheme === 'dark');
 
     themeToggle.addEventListener('change', function() {
         const theme = this.checked ? 'dark' : 'light';
-        transition();
+        trans();
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     });
 
-    let transition = () => {
+    let trans = () => {
         document.documentElement.classList.add('transition');
         window.setTimeout(() => {
             document.documentElement.classList.remove('transition');
         }, 1000);
     };
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    populateProjects();
-    setupHamburgerMenu();
-    setupThemeToggle();
-    document.body.classList.add('fade-in');
-});
-
-window.addEventListener('beforeunload', function () {
-    document.body.classList.add('fade-out');
-});
