@@ -15,7 +15,7 @@ function populateProjects() {
         { 
             name: "Cursor Cloak", 
             link: "https://github.com/nickshouse/Cursor-Cloak",
-            description: "A fun project to hide the cursor with a cloak.",
+            description: "Cursor Cloak is an innovative C++ application that enhances user experience by cleverly auto-hiding the cursor during idle times. <br><br> It also features a convenient system tray icon for easy termination. <br><br> It showcases strong skills in C++ and Windows-specific APIs.",
             icon: "fas fa-mouse-pointer"
         },
         { 
