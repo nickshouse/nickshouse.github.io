@@ -92,3 +92,10 @@ function setupThemeToggle() {
         }, 1000);
     };
 }
+
+document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('contactPage').style.display = 'block';
+    document.getElementById('sidebar').classList.remove('active');
+});
