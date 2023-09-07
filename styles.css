@@ -1,7 +1,9 @@
-/* Import Roboto font from Google Fonts */
+/* Importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root, [data-theme="light"] {
+/* Theme Variables */
+:root {
+    /* Default theme (assuming dark mode as default) */
     --color-text: #fff;
     --color-bg: #1a1a1a;
     --color-btn: #fff;
@@ -12,6 +14,7 @@
 }
 
 [data-theme="light"] {
+    /* Light theme */
     --color-text: #000;
     --color-bg: #fff;
     --color-btn: #000;
@@ -21,8 +24,9 @@
     --color-hover: rgba(0, 0, 0, 0.1);
 }
 
+/* Reset & Global Styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Use Roboto font as the first choice */
+    font-family: 'Roboto', Arial, sans-serif; 
     padding: 0;
     margin: 0;
     display: flex;
@@ -33,6 +37,7 @@ body {
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }
 
+/* Navigation and Sidebar */
 .hamburger {
     position: fixed;
     top: 8px;
@@ -46,7 +51,8 @@ body {
     transition: color 0.5s ease-out, transform 0.3s ease-in-out;
 }
 
-.hamburger:hover {
+.hamburger:hover, 
+.hamburger:focus {
     transform: scale(1.1);
 }
 
@@ -82,18 +88,20 @@ body {
     color: var(--color-text);
 }
 
-.sidebar a i {
-    margin-right: 10px;
+.sidebar a:hover, 
+.sidebar a:focus {
+    background-color: var(--color-hover);
 }
 
-.sidebar a:hover {
-    background-color: var(--color-hover);
+.sidebar a:active {
+    transform: scale(0.98);
 }
 
 .sidebar.active {
     width: 250px;
 }
 
+/* Main content and grid */
 h1 {
     text-align: center;
     padding: 20px;
@@ -134,9 +142,14 @@ h1 {
     background-color: var(--color-sidebar);
 }
 
-.project:hover {
+.project:hover, 
+.project:focus {
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     transform: scale(1.05);
+}
+
+.project:active {
+    transform: scale(0.98);
 }
 
 .project-title {
@@ -150,6 +163,7 @@ h1 {
     display: block;
 }
 
+/* Footer */
 footer {
     padding: 20px;
     position: relative;
@@ -169,6 +183,7 @@ footer {
     margin: 0;
 }
 
+/* Theme Switcher */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -227,6 +242,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/* Icons */
 .fa-moon {
     margin-right: 10px;
     font-size: 24px;
