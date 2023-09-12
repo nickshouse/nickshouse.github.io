@@ -132,7 +132,7 @@ h1 {
     width: 210px;  
     max-width: 210px;  
     min-width: 210px;
-    height: 210px; /* Making it a square */
+    height: 300px; /* Making it a square */
     border: none;
     border-radius: 8px;
     overflow: hidden;
