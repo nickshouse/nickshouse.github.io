@@ -142,6 +142,31 @@ h1 {
     background-color: var(--color-sidebar);
 }
 
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    opacity: 0;  /* Set the default opacity to 0 */
+    animation: fadeIn 1s forwards;  /* Fade in over 1 second */
+    transition: background-color 0.25s ease-out, color 0.25s ease-out; 
+}
 
 
 /* Adjust to 3 columns when viewport width is less than 1230px */

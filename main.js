@@ -118,8 +118,8 @@ const PortfolioApp = (() => {
     const handleContactClick = () => {
         document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
             event.preventDefault();
-            document.getElementById('main-content').classList.toggle('hidden');
-            document.getElementById('contactPage').classList.toggle('hidden');
+            document.getElementById('projects').classList.toggle('fade-out');
+            document.getElementById('duplicated-projects').classList.toggle('fade-out');
             document.getElementById('sidebar').classList.remove('active');
         });
     };
