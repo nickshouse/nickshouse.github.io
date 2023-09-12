@@ -211,7 +211,7 @@ footer {
 
 .footer-content p {
     margin: 0;
-    margin-left: -200px; /* Make the text ignore the left margin */
+    margin-left: -50px; /* Make the text ignore the left margin */
 }
 
 /* Theme Switcher */
