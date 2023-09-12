@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    populateProjects();
-    setupHamburgerMenu();
-    setupThemeToggle();
-});
-
-function populateProjects() {
+/**
+ * Modular Approach: Encapsulating all functions and variables within the PortfolioApp module.
+ */
+const PortfolioApp = (() => {
+    
+    // Constants for projects data
     const projects = [
         { 
             name: "DisHub", 
@@ -36,66 +35,104 @@ function populateProjects() {
             description: "A collection of scripts for managing Windows systems.",
             icon: "fas fa-windows"
         }
-
-
+        // ... (the rest of your projects data)
     ];
 
-    const projectsContainer = document.getElementById('projects');
+    /**
+     * Populate the projects on the webpage.
+     */
+    const populateProjects = () => {
+        const projectsContainer = document.getElementById('projects');
+        const duplicatedProjectsContainer = document.getElementById('duplicated-projects');
 
-    projects.forEach(project => {
-        const projectElement = document.createElement('div');
-        projectElement.className = 'project';
-        projectElement.innerHTML = `
-            <a class="project-link" href="${project.link}" target="_blank">
-                <h2 class="project-title">${project.name} <i class="${project.icon} icon-right"></i></h2>
-                <p>${project.description}</p>
-            </a>
-        `;
-        projectsContainer.appendChild(projectElement);
-    });
-}
-
-function setupHamburgerMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-
-    hamburger.addEventListener('click', event => {
-        event.stopPropagation();
-        sidebar.classList.toggle('active');
-    });
-
-    document.addEventListener('click', event => {
-        if (!sidebar.contains(event.target)) {
-            sidebar.classList.remove('active');
+        // Populate the duplicated projects container with the title "Projects"
+        if (duplicatedProjectsContainer) {
+            const titleElement = document.createElement('div');
+            titleElement.className = 'project-title-container';
+            duplicatedProjectsContainer.appendChild(titleElement);
         }
-    });
-}
 
-function setupThemeToggle() {
-    const themeToggle = document.getElementById('checkbox');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+        // Populate the original projects container as before
+        if (projectsContainer) {
+            projects.forEach(project => {
+                const projectElement = document.createElement('div');
+                projectElement.className = 'project';
+                projectElement.innerHTML = `
+                    <a class="project-link" href="${project.link}" target="_blank">
+                        <h2 class="project-title">${project.name} <i class="${project.icon} icon-right"></i></h2>
+                        <p>${project.description}</p>
+                    </a>
+                `;
+                projectsContainer.appendChild(projectElement);
+            });
+        }
+    };
 
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeToggle.checked = (currentTheme === 'dark');
+    /**
+     * Setup the hamburger menu functionality.
+     */
+    const setupHamburgerMenu = () => {
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        
+        document.addEventListener('click', event => {
+            if (event.target === hamburger || hamburger.contains(event.target)) {
+                sidebar.classList.toggle('active');
+            } else if (!sidebar.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    };
 
-    themeToggle.addEventListener('change', function() {
-        const theme = this.checked ? 'dark' : 'light';
-        trans();
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    });
-
-    const trans = () => {
+    /**
+     * Apply the theme transition.
+     */
+    const applyThemeTransition = () => {
         document.documentElement.classList.add('transition');
         setTimeout(() => {
             document.documentElement.classList.remove('transition');
         }, 1000);
     };
-}
 
-document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('main-content').style.display = 'none';
-    document.getElementById('contactPage').style.display = 'block';
-    document.getElementById('sidebar').classList.remove('active');
-});
+    /**
+     * Setup the theme toggle functionality.
+     */
+    const setupThemeToggle = () => {
+        const themeToggle = document.getElementById('checkbox');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeToggle.checked = (currentTheme === 'dark');
+
+        themeToggle.addEventListener('change', function() {
+            const theme = this.checked ? 'dark' : 'light';
+            applyThemeTransition();
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    };
+
+    /**
+     * Handle click event for the contact menu item.
+     */
+    const handleContactClick = () => {
+        document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('main-content').classList.toggle('hidden');
+            document.getElementById('contactPage').classList.toggle('hidden');
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    };
+
+    // Publicly exposed methods
+    return {
+        init: () => {
+            populateProjects();
+            setupHamburgerMenu();
+            setupThemeToggle();
+            handleContactClick();
+        }
+    };
+})();
+
+document.addEventListener('DOMContentLoaded', PortfolioApp.init);

@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nick's Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
     <div id="hamburger-container">
-        <button id="hamburger" class="hamburger">&#9776;</button>
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
     </div>
-
-    <div id="sidebar" class="sidebar">
+    <div class="sidebar" id="sidebar">
         <div class="menu">
-            <a href="#home"><i class="fas fa-home menu-icon"></i> Home</a>
-            <a href="#contact"><i class="fas fa-envelope menu-icon"></i> Contact</a>
+            <a href="#home">
+                <i class="fas fa-home menu-icon">
+                </i>
+                Home
+            </a>
+            <a href="#contact">
+                <i class="fas fa-envelope menu-icon">
+                </i>
+                Contact
+            </a>
         </div>
     </div>
 
-    <h1 id="home">Nick's Projects</h1>
     <div id="main-content">
-    <div id="contactPage" style="display: none;">
-        <h2>Contact Me</h2>
-        <p>Name: Nick</p>
-        <p>Email: nick@email.com</p>
-        <div>
-            <a href="https://github.com/nickshouse" target="_blank">GitHub</a> |
-            <a href="https://linkedin.com/in/nickshouse" target="_blank">LinkedIn</a> |
-            <a href="https://twitter.com/nickshouse" target="_blank">Twitter</a>
+        <div id="duplicated-projects">
+            <div class="project project-title-container">Projects</div>
+            <!-- Other projects can be added here by JavaScript -->
         </div>
-    </div>
-
         <div id="projects">
             <!-- Projects will be added here by JavaScript -->
         </div>
@@ -40,19 +40,26 @@
         </div>
     </div>
 
+    
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 nickshouse <br> All rights reserved</p>
+            <p>
+                © 2023 nickshouse
+                <br />
+                All rights reserved
+            </p>
             <div class="theme-switch-wrapper">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-moon">
+                </i>
                 <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
+                    <input id="checkbox" type="checkbox" />
+                    <div class="slider round">
+                    </div>
                 </label>
             </div>
         </div>
     </footer>
-
-    <script src="main.js"></script>
+    <script src="main.js">
+    </script>
 </body>
 </html>
