@@ -10,36 +10,32 @@
 
 <body>
     <div id="hamburger-container">
-        <button class="hamburger" id="hamburger">
-            ☰
-        </button>
+        <button class="hamburger" id="hamburger">☰</button>
     </div>
     <div class="sidebar" id="sidebar">
         <div class="menu">
             <a href="#home">
-                <i class="fas fa-home menu-icon"></i>
+                <i class="fas fa-home menu-icon"> </i>
                 Home
             </a>
             <a href="#contact">
-                <i class="fas fa-envelope menu-icon"></i>
+                <i class="fas fa-envelope menu-icon"> </i>
                 Contact
             </a>
         </div>
     </div>
-
     <div id="main-content">
         <div id="duplicated-projects">
             <div class="project project-title-container">Projects</div>
-            <!-- Other projects can be added here by JavaScript -->
         </div>
-        <div id="projects">
-            <!-- Projects will be added here by JavaScript -->
-        </div>
-        <div id="contact">
-            <!-- Add contact information or a form here -->
+        <div id="projects"></div>
+        <div class="hidden" id="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: example@email.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <p>LinkedIn: https://www.linkedin.com/in/example/</p>
         </div>
     </div>
-
     <footer>
         <div class="footer-content">
             <p>
@@ -48,7 +44,7 @@
                 All rights reserved
             </p>
             <div class="theme-switch-wrapper">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-moon"> </i>
                 <label class="theme-switch" for="checkbox">
                     <input id="checkbox" type="checkbox" />
                     <div class="slider round"></div>
@@ -57,6 +53,10 @@
         </div>
     </footer>
     <script src="main.js"></script>
+    <div class="hidden" id="contact-info">
+        <p>Email: your-email@example.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+    </div>
 </body>
 
 </html>

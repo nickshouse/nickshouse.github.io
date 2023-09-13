@@ -1,5 +1,5 @@
 /* Importing fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 /* Theme Variables */
 :root {
@@ -26,11 +26,13 @@
 
 /* Reset & Global Styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif; 
+    font-family: "Roboto", Arial, sans-serif;
     padding: 0;
     margin: 0;
-    padding-left: 50px; /* left margin */
-    padding-right: 200px; /* right margin */
+    padding-left: 50px;
+    /* left margin */
+    padding-right: 200px;
+    /* right margin */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -54,7 +56,24 @@ body {
     transition: color 0.5s ease-out, transform 0.3s ease-in-out;
 }
 
-.hamburger:hover, 
+.hidden {
+    display: none;
+}
+
+#contact-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger:hover,
 .hamburger:focus {
     transform: scale(1.1);
 }
@@ -71,7 +90,7 @@ body {
     z-index: 999;
     box-sizing: border-box;
     background-color: var(--color-sidebar);
-    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .menu {
@@ -91,7 +110,7 @@ body {
     color: var(--color-text);
 }
 
-.sidebar a:hover, 
+.sidebar a:hover,
 .sidebar a:focus {
     background-color: var(--color-hover);
 }
@@ -118,26 +137,30 @@ h1 {
 }
 
 #duplicated-projects .project-title-container {
-    height: 10px; /* Set the height to 10px */
+    height: 10px;
+    /* Set the height to 10px */
 }
 
-#projects, #duplicated-projects {
+#projects,
+#duplicated-projects {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    gap: 20px; /* This ensures a consistent 20px spacing between each project */
+    gap: 20px;
+    /* This ensures a consistent 20px spacing between each project */
 }
 
 .project {
-    width: 210px;  
-    max-width: 210px;  
+    width: 210px;
+    max-width: 210px;
     min-width: 210px;
-    height: 300px; /* Making it a square */
+    height: 300px;
+    /* Making it a square */
     border: none;
     border-radius: 8px;
     overflow: hidden;
     padding: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     background-color: var(--color-sidebar);
 }
@@ -157,46 +180,53 @@ h1 {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
 body {
-    opacity: 0;  /* Set the default opacity to 0 */
-    animation: fadeIn 1s forwards;  /* Fade in over 1 second */
-    transition: background-color 0.25s ease-out, color 0.25s ease-out; 
+    opacity: 0;
+    /* Set the default opacity to 0 */
+    animation: fadeIn 1s forwards;
+    /* Fade in over 1 second */
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
-
 
 /* Adjust to 3 columns when viewport width is less than 1230px */
 @media (max-width: 1230px) {
-    #projects, #duplicated-projects {
+
+    #projects,
+    #duplicated-projects {
         flex-wrap: wrap;
     }
 
     .project {
-        flex: 1 0 calc(33.33% - 20px); /* This gives us roughly 3 columns */
+        flex: 1 0 calc(33.33% - 20px);
+        /* This gives us roughly 3 columns */
     }
 }
 
 /* Adjust to 2 columns when viewport width is less than 990px */
 @media (max-width: 990px) {
     .project {
-        flex: 1 0 calc(50% - 20px); /* This gives us 2 columns */
+        flex: 1 0 calc(50% - 20px);
+        /* This gives us 2 columns */
     }
 }
 
 /* Adjust to 1 column when viewport width is below 770px */
 @media (max-width: 770px) {
     .project {
-        flex: 1 0 100%; /* This gives us 1 column */
+        flex: 1 0 100%;
+        /* This gives us 1 column */
     }
 }
 
-.project:hover, 
+.project:hover,
 .project:focus {
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
 }
 
@@ -219,8 +249,10 @@ body {
 footer {
     padding: 20px;
     position: relative;
-    width: calc(100% + 400px); /* Extend width to counteract the 200px padding on each side */
-    margin-left: -200px; /* Move the footer leftwards to counteract the padding */
+    width: calc(100% + 400px);
+    /* Extend width to counteract the 200px padding on each side */
+    margin-left: -200px;
+    /* Move the footer leftwards to counteract the padding */
     box-sizing: border-box;
     flex-shrink: 0;
     background-color: var(--color-footer);
@@ -230,13 +262,16 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: calc(100% - 400px); /* Ensure the content doesn't exceed the original width */
-    margin: 0 auto; /* Center the content */
+    max-width: calc(100% - 400px);
+    /* Ensure the content doesn't exceed the original width */
+    margin: 0 auto;
+    /* Center the content */
 }
 
 .footer-content p {
     margin: 0;
-    margin-left: -50px; /* Make the text ignore the left margin */
+    margin-left: -50px;
+    /* Make the text ignore the left margin */
 }
 
 /* Theme Switcher */
@@ -244,7 +279,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: -200px; /* Make the button ignore the right margin */
+    margin-right: -200px;
+    /* Make the button ignore the right margin */
 }
 
 .theme-switch input {
@@ -269,7 +305,7 @@ footer {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    transition: .4s;
+    transition: 0.4s;
 }
 
 .slider:before {
@@ -280,14 +316,14 @@ footer {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    transition: .4s;
+    transition: 0.4s;
 }
 
-input:checked + .slider {
-    background-color: #2196F3;
+input:checked+.slider {
+    background-color: #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(20px);
 }
 
