@@ -169,6 +169,11 @@ h1 {
     animation: fadeOut 1s forwards;
 }
 
+/* Fade-in transition for project elements */
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
 @keyframes fadeOut {
     to {
         opacity: 0;
