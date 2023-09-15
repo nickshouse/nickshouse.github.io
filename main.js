@@ -44,11 +44,12 @@ const PortfolioApp = (() => {
     const populateProjects = () => {
         const projectsContainer = document.getElementById('projects');
         const duplicatedProjectsContainer = document.getElementById('duplicated-projects');
-
+    
         // Populate the duplicated projects container with the title "Projects"
         if (duplicatedProjectsContainer) {
             const titleElement = document.createElement('div');
             titleElement.className = 'project-title-container';
+            titleElement.innerText = "Projects";  // Added this line to set the text
             duplicatedProjectsContainer.appendChild(titleElement);
         }
 

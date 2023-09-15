@@ -141,8 +141,16 @@ h1 {
     max-width: 100%;
 }
 
+/* Updated project title container styling */
+.project-title-container {
+    font-size: 28px;  /* Set the font size to 28px or as you like */
+    background-color: transparent !important;  /* Forcefully remove the background */
+}
+
+
+
 #duplicated-projects .project-title-container {
-    height: 10px;
+    height: 15px;
     /* Set the height to 10px */
 }
 
