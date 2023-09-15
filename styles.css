@@ -100,6 +100,11 @@ body {
     padding: 0;
 }
 
+/* Add margin to menu icons */
+.menu-icon {
+    margin-right: 10px; /* Adjust this value as needed */
+}
+
 .sidebar a {
     padding: 15px 30px;
     text-decoration: none;
