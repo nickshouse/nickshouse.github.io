@@ -30,9 +30,7 @@ body {
     padding: 0;
     margin: 0;
     padding-left: 50px;
-    /* left margin */
     padding-right: 200px;
-    /* right margin */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -73,6 +71,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#contact-info a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+#contact-info a:visited {
+    color: var(--color-text);
+}
+
 .hamburger:hover,
 .hamburger:focus {
     transform: scale(1.1);
@@ -100,9 +107,8 @@ body {
     padding: 0;
 }
 
-/* Add margin to menu icons */
 .menu-icon {
-    margin-right: 10px; /* Adjust this value as needed */
+    margin-right: 10px;
 }
 
 .sidebar a {
@@ -141,17 +147,13 @@ h1 {
     max-width: 100%;
 }
 
-/* Updated project title container styling */
 .project-title-container {
-    font-size: 28px;  /* Set the font size to 28px or as you like */
-    background-color: transparent !important;  /* Forcefully remove the background */
+    font-size: 28px;
+    background-color: transparent !important;
 }
-
-
 
 #duplicated-projects .project-title-container {
     height: 15px;
-    /* Set the height to 10px */
 }
 
 #projects,
@@ -160,7 +162,6 @@ h1 {
     flex-wrap: wrap;
     padding: 20px;
     gap: 20px;
-    /* This ensures a consistent 20px spacing between each project */
 }
 
 .project {
@@ -168,7 +169,6 @@ h1 {
     max-width: 210px;
     min-width: 210px;
     height: 300px;
-    /* Making it a square */
     border: none;
     border-radius: 8px;
     overflow: hidden;
@@ -178,11 +178,17 @@ h1 {
     background-color: var(--color-sidebar);
 }
 
+.project.clicked,
+.project.clicked:hover,
+.project.clicked:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: none;
+}
+
 .fade-out {
     animation: fadeOut 1s forwards;
 }
 
-/* Fade-in transition for project elements */
 .fade-in {
     animation: fadeIn 1s forwards;
 }
@@ -206,15 +212,11 @@ h1 {
 
 body {
     opacity: 0;
-    /* Set the default opacity to 0 */
     animation: fadeIn 1s forwards;
-    /* Fade in over 1 second */
     transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 
-/* Adjust to 3 columns when viewport width is less than 1230px */
 @media (max-width: 1230px) {
-
     #projects,
     #duplicated-projects {
         flex-wrap: wrap;
@@ -222,23 +224,18 @@ body {
 
     .project {
         flex: 1 0 calc(33.33% - 20px);
-        /* This gives us roughly 3 columns */
     }
 }
 
-/* Adjust to 2 columns when viewport width is less than 990px */
 @media (max-width: 990px) {
     .project {
         flex: 1 0 calc(50% - 20px);
-        /* This gives us 2 columns */
     }
 }
 
-/* Adjust to 1 column when viewport width is below 770px */
 @media (max-width: 770px) {
     .project {
         flex: 1 0 100%;
-        /* This gives us 1 column */
     }
 }
 
@@ -261,6 +258,7 @@ body {
     color: inherit;
     text-decoration: none;
     display: block;
+    height: 100%;
 }
 
 /* Footer */
@@ -268,9 +266,7 @@ footer {
     padding: 20px;
     position: relative;
     width: calc(100% + 400px);
-    /* Extend width to counteract the 200px padding on each side */
     margin-left: -200px;
-    /* Move the footer leftwards to counteract the padding */
     box-sizing: border-box;
     flex-shrink: 0;
     background-color: var(--color-footer);
@@ -281,24 +277,19 @@ footer {
     justify-content: space-between;
     align-items: center;
     max-width: calc(100% - 400px);
-    /* Ensure the content doesn't exceed the original width */
     margin: 0 auto;
-    /* Center the content */
 }
 
 .footer-content p {
     margin: 0;
     margin-left: -50px;
-    /* Make the text ignore the left margin */
 }
 
-/* Theme Switcher */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-right: -200px;
-    /* Make the button ignore the right margin */
 }
 
 .theme-switch input {
@@ -337,11 +328,11 @@ footer {
     transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: #2196f3;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     transform: translateX(20px);
 }
 
@@ -353,7 +344,6 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-/* Icons */
 .fa-moon {
     margin-right: 10px;
     font-size: 24px;

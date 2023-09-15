@@ -35,43 +35,42 @@ const PortfolioApp = (() => {
             description: "A collection of scripts for managing Windows systems.",
             icon: "fas fa-windows"
         }
-        // ... (the rest of your projects data)
     ];
 
-    /**
-     * Populate the projects on the webpage.
-     */
     const populateProjects = () => {
         const projectsContainer = document.getElementById('projects');
         const duplicatedProjectsContainer = document.getElementById('duplicated-projects');
     
-        // Populate the duplicated projects container with the title "Projects"
         if (duplicatedProjectsContainer) {
             const titleElement = document.createElement('div');
             titleElement.className = 'project-title-container';
-            titleElement.innerText = "Projects";  // Added this line to set the text
+            titleElement.innerText = "Projects";
             duplicatedProjectsContainer.appendChild(titleElement);
         }
 
-        // Populate the original projects container as before
         if (projectsContainer) {
             projects.forEach(project => {
-                const projectElement = document.createElement('div');
-                projectElement.className = 'project';
+                const projectElement = document.createElement('a');
+                projectElement.className = 'project project-link';
+                projectElement.href = project.link;
+                projectElement.target = "_blank";
+                
                 projectElement.innerHTML = `
-                    <a class="project-link" href="${project.link}" target="_blank">
+                    <div>
                         <h2 class="project-title">${project.name} <i class="${project.icon} icon-right"></i></h2>
                         <p>${project.description}</p>
-                    </a>
+                    </div>
                 `;
+                
+                projectElement.addEventListener('click', function(event) {
+                    this.classList.toggle('clicked');
+                });
+
                 projectsContainer.appendChild(projectElement);
             });
         }
     };
 
-    /**
-     * Setup the hamburger menu functionality.
-     */
     const setupHamburgerMenu = () => {
         const hamburger = document.getElementById('hamburger');
         const sidebar = document.getElementById('sidebar');
@@ -85,9 +84,6 @@ const PortfolioApp = (() => {
         });
     };
 
-    /**
-     * Apply the theme transition.
-     */
     const applyThemeTransition = () => {
         document.documentElement.classList.add('transition');
         setTimeout(() => {
@@ -95,9 +91,6 @@ const PortfolioApp = (() => {
         }, 1000);
     };
 
-    /**
-     * Setup the theme toggle functionality.
-     */
     const setupThemeToggle = () => {
         const themeToggle = document.getElementById('checkbox');
         const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -113,9 +106,6 @@ const PortfolioApp = (() => {
         });
     };
 
-    /**
-     * Handle click event for the contact menu item.
-     */
     const handleContactClick = () => {
         document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
             event.preventDefault();
@@ -126,24 +116,22 @@ const PortfolioApp = (() => {
         });
     };
 
-// Add an event listener for the 'home' button to restore the project elements and add fade-in effect
-document.querySelector('.menu a[href="#home"]').addEventListener('click', function(event) {
-    event.preventDefault();
-    const projectsElement = document.getElementById('projects');
-    const duplicatedProjectsElement = document.getElementById('duplicated-projects');
-    projectsElement.classList.remove('fade-out');
-    duplicatedProjectsElement.classList.remove('fade-out');
-    projectsElement.classList.add('fade-in');
-    duplicatedProjectsElement.classList.add('fade-in');
-    document.getElementById('contact-info').classList.add('hidden');
-    document.getElementById('sidebar').classList.remove('active');
-    setTimeout(() => {
-        projectsElement.classList.remove('fade-in');
-        duplicatedProjectsElement.classList.remove('fade-in');
-    }, 1000);
-});
+    document.querySelector('.menu a[href="#home"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        const projectsElement = document.getElementById('projects');
+        const duplicatedProjectsElement = document.getElementById('duplicated-projects');
+        projectsElement.classList.remove('fade-out');
+        duplicatedProjectsElement.classList.remove('fade-out');
+        projectsElement.classList.add('fade-in');
+        duplicatedProjectsElement.classList.add('fade-in');
+        document.getElementById('contact-info').classList.add('hidden');
+        document.getElementById('sidebar').classList.remove('active');
+        setTimeout(() => {
+            projectsElement.classList.remove('fade-in');
+            duplicatedProjectsElement.classList.remove('fade-in');
+        }, 1000);
+    });
 
-    // Publicly exposed methods
     return {
         init: () => {
             populateProjects();
