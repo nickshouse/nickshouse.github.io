@@ -3,7 +3,6 @@
 
 /* Theme Variables */
 :root {
-    /* Default theme (assuming dark mode as default) */
     --color-text: #fff;
     --color-bg: #1a1a1a;
     --color-btn: #fff;
@@ -58,6 +57,18 @@ body {
     display: none;
 }
 
+/* Styles for contact info links */
+#contact-info a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+#contact-info a:hover,
+#contact-info a:focus,
+#contact-info a:active {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
 #contact-info {
     position: fixed;
     top: 50%;
@@ -69,15 +80,6 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#contact-info a {
-    color: var(--color-text);
-    text-decoration: none;
-}
-
-#contact-info a:visited {
-    color: var(--color-text);
 }
 
 .hamburger:hover,
@@ -204,7 +206,6 @@ h1 {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -258,7 +259,6 @@ body {
     color: inherit;
     text-decoration: none;
     display: block;
-    height: 100%;
 }
 
 /* Footer */
