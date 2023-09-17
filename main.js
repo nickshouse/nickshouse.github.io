@@ -105,13 +105,15 @@ const PortfolioApp = (() => {
             localStorage.setItem('theme', theme);
         });
     };
-
+    
     const handleContactClick = () => {
         document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
             event.preventDefault();
             document.getElementById('projects').classList.add('fade-out');
             document.getElementById('duplicated-projects').classList.add('fade-out');
-            document.getElementById('contact-info').classList.remove('hidden');
+            const contactInfo = document.getElementById('contact-info');
+            contactInfo.classList.remove('hidden', 'fade-out'); // Remove hidden and fade-out classes
+            contactInfo.classList.add('fade-in');
             document.getElementById('sidebar').classList.remove('active');
         });
     };
@@ -120,12 +122,23 @@ const PortfolioApp = (() => {
         event.preventDefault();
         const projectsElement = document.getElementById('projects');
         const duplicatedProjectsElement = document.getElementById('duplicated-projects');
+        const contactInfo = document.getElementById('contact-info');
+
         projectsElement.classList.remove('fade-out');
         duplicatedProjectsElement.classList.remove('fade-out');
         projectsElement.classList.add('fade-in');
         duplicatedProjectsElement.classList.add('fade-in');
-        document.getElementById('contact-info').classList.add('hidden');
+
+        contactInfo.classList.remove('fade-in'); // Remove fade-in class
+        contactInfo.classList.add('fade-out'); // Add fade-out effect
+
+        setTimeout(() => {
+            contactInfo.classList.add('hidden');
+            contactInfo.classList.remove('fade-out');
+        }, 1000); // Assuming 1000ms for the fade-out transition in your CSS
+
         document.getElementById('sidebar').classList.remove('active');
+
         setTimeout(() => {
             projectsElement.classList.remove('fade-in');
             duplicatedProjectsElement.classList.remove('fade-in');
