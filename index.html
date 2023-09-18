@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="Nick's portfolio website">
+    <meta name="keywords" content="Nick, Portfolio, Web Development">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Nick's Portfolio</title>
 </head>
-
 <body>
-    <div id="hamburger-container">
+    <header id="hamburger-container">
         <button class="hamburger" id="hamburger">☰</button>
-    </div>
-    <div class="sidebar" id="sidebar">
+    </header>
+    <nav class="sidebar" id="sidebar">
         <div class="menu">
             <a href="#home">
-                <i class="fas fa-home menu-icon"> </i>
+                <i class="fas fa-home menu-icon"></i>
                 Home
             </a>
             <a href="#contact">
-                <i class="fas fa-envelope menu-icon"> </i>
+                <i class="fas fa-envelope menu-icon"></i>
                 Contact
             </a>
         </div>
-    </div>
-    <div id="main-content">
-        <div id="duplicated-projects">
-        </div>
-        <div id="projects"></div>
-        <div class="hidden" id="contact-info">
+    </nav>
+    <main id="main-content">
+        <section id="duplicated-projects">
+        </section>
+        <section id="projects"></section>
+        <section class="hidden" id="contact-info">
             <h2>Contact Information</h2>
             <p>Email: nickshouse@proton.me</p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/nkoronakos/" target="_blank">https://www.linkedin.com/in/nkoronakos/</a></p>
             <p>Website: <a href="https://nickshouse.github.io/" target="_blank">https://nickshouse.github.io/</a></p>
             <p>Github: <a href="https://github.com/nickshouse" target="_blank">https://github.com/nickshouse</a></p>
-        </div>
-    </div>
+        </section>
+    </main>
     <footer>
         <div class="footer-content">
             <p>
                 © 2023 nickshouse
-                <br />
+                <br>
                 All rights reserved
             </p>
             <div class="theme-switch-wrapper">
-                <i class="fas fa-moon"> </i>
+                <i class="fas fa-moon"></i>
                 <label class="theme-switch" for="checkbox">
-                    <input id="checkbox" type="checkbox" />
+                    <input id="checkbox" type="checkbox">
                     <div class="slider round"></div>
                 </label>
             </div>
@@ -54,5 +55,4 @@
     </footer>
     <script src="main.js"></script>
 </body>
-
 </html>
