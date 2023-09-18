@@ -1,9 +1,5 @@
-/**
- * Modular Approach: Encapsulating all functions and variables within the PortfolioApp module.
- */
 const PortfolioApp = (() => {
     
-    // Constants for projects data
     const projects = [
         { 
             name: "DisHub", 
@@ -40,7 +36,7 @@ const PortfolioApp = (() => {
     const populateProjects = () => {
         const projectsContainer = document.getElementById('projects');
         const duplicatedProjectsContainer = document.getElementById('duplicated-projects');
-    
+
         if (duplicatedProjectsContainer) {
             const titleElement = document.createElement('div');
             titleElement.className = 'project-title-container';
@@ -49,20 +45,20 @@ const PortfolioApp = (() => {
         }
 
         if (projectsContainer) {
-            projects.forEach(project => {
+            projects.forEach(({name, link, description, icon}) => {
                 const projectElement = document.createElement('a');
                 projectElement.className = 'project project-link';
-                projectElement.href = project.link;
+                projectElement.href = link;
                 projectElement.target = "_blank";
                 
                 projectElement.innerHTML = `
                     <div>
-                        <h2 class="project-title">${project.name} <i class="${project.icon} icon-right"></i></h2>
-                        <p>${project.description}</p>
+                        <h2 class="project-title">${name} <i class="${icon} icon-right"></i></h2>
+                        <p>${description}</p>
                     </div>
                 `;
-                
-                projectElement.addEventListener('click', function(event) {
+
+                projectElement.addEventListener('click', function() {
                     this.classList.toggle('clicked');
                 });
 
@@ -74,11 +70,11 @@ const PortfolioApp = (() => {
     const setupHamburgerMenu = () => {
         const hamburger = document.getElementById('hamburger');
         const sidebar = document.getElementById('sidebar');
-        
-        document.addEventListener('click', event => {
-            if (event.target === hamburger || hamburger.contains(event.target)) {
+
+        document.addEventListener('click', ({target}) => {
+            if (target === hamburger || hamburger.contains(target)) {
                 sidebar.classList.toggle('active');
-            } else if (!sidebar.contains(event.target)) {
+            } else if (!sidebar.contains(target)) {
                 sidebar.classList.remove('active');
             }
         });
@@ -94,7 +90,6 @@ const PortfolioApp = (() => {
     const setupThemeToggle = () => {
         const themeToggle = document.getElementById('checkbox');
         const currentTheme = localStorage.getItem('theme') || 'dark';
-
         document.documentElement.setAttribute('data-theme', currentTheme);
         themeToggle.checked = (currentTheme === 'dark');
 
@@ -105,14 +100,14 @@ const PortfolioApp = (() => {
             localStorage.setItem('theme', theme);
         });
     };
-    
+
     const handleContactClick = () => {
         document.querySelector('.menu a[href="#contact"]').addEventListener('click', function(event) {
             event.preventDefault();
             document.getElementById('projects').classList.add('fade-out');
             document.getElementById('duplicated-projects').classList.add('fade-out');
             const contactInfo = document.getElementById('contact-info');
-            contactInfo.classList.remove('hidden', 'fade-out'); // Remove hidden and fade-out classes
+            contactInfo.classList.remove('hidden', 'fade-out');
             contactInfo.classList.add('fade-in');
             document.getElementById('sidebar').classList.remove('active');
         });
@@ -129,13 +124,13 @@ const PortfolioApp = (() => {
         projectsElement.classList.add('fade-in');
         duplicatedProjectsElement.classList.add('fade-in');
 
-        contactInfo.classList.remove('fade-in'); // Remove fade-in class
-        contactInfo.classList.add('fade-out'); // Add fade-out effect
+        contactInfo.classList.remove('fade-in');
+        contactInfo.classList.add('fade-out');
 
         setTimeout(() => {
             contactInfo.classList.add('hidden');
             contactInfo.classList.remove('fade-out');
-        }, 1000); // Assuming 1000ms for the fade-out transition in your CSS
+        }, 1000);
 
         document.getElementById('sidebar').classList.remove('active');
 
