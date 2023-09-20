@@ -49,7 +49,7 @@ body {
     font-size: 25px;
     background: none;
     border: none;
-    z-index: 1000;
+    z-index: 1003;
     cursor: pointer;
     color: var(--color-btn);
     transition: color 0.25s ease-out, transform 0.3s ease-in-out;

@@ -2,16 +2,22 @@ const PortfolioApp = (() => {
     
     const projects = [
         { 
-            name: "DisHub", 
-            link: "https://github.com/nickshouse/DisHub",
-            description: "This is a Discord bot that makes it possible to monitor the commits of a specified GitHub repository. The bot will post each commit to a specified Discord channel in real time.",
-            icon: "fas fa-code"
-        },
-        { 
             name: "Cursor Cloak", 
             link: "https://github.com/nickshouse/Cursor-Cloak",
             description: "Cursor Cloak is an innovative C++ application that enhances user experience by cleverly auto-hiding the cursor during idle times. <br><br> It also features a convenient system tray icon for easy termination. <br><br> It showcases strong skills in C++ and Windows-specific APIs.",
             icon: "fas fa-mouse-pointer"
+        },
+        { 
+            name: "SortScape", 
+            link: "https://github.com/nickshouse/SortScape",
+            description: "This is a new project. Description coming soon.",
+            icon: "fas fa-sort"
+        },
+        { 
+            name: "DisHub", 
+            link: "https://github.com/nickshouse/DisHub",
+            description: "This is a Discord bot that makes it possible to monitor the commits of a specified GitHub repository. The bot will post each commit to a specified Discord channel in real time.",
+            icon: "fas fa-code"
         },
         { 
             name: "Chao Bot", 
@@ -30,7 +36,8 @@ const PortfolioApp = (() => {
             link: "https://github.com/nickshouse/Windows-Stuff",
             description: "A collection of scripts for managing Windows systems.",
             icon: "fas fa-windows"
-        }
+        },
+
     ];
 
     const populateProjects = () => {
@@ -60,6 +67,11 @@ const PortfolioApp = (() => {
 
                 projectElement.addEventListener('click', function() {
                     this.classList.toggle('clicked');
+                    this.dispatchEvent(new Event('removeHover'));
+                });
+
+                projectElement.addEventListener('removeHover', function() {
+                    this.blur();  // This should remove the hover state on most browsers
                 });
 
                 projectsContainer.appendChild(projectElement);
