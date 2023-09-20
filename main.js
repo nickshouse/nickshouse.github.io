@@ -71,13 +71,42 @@ const PortfolioApp = (() => {
                 });
 
                 projectElement.addEventListener('removeHover', function() {
-                    this.blur();  // This should remove the hover state on most browsers
+                    this.blur();
                 });
 
                 projectsContainer.appendChild(projectElement);
             });
         }
     };
+
+    const setupScrollFade = () => {
+        window.addEventListener('scroll', () => {
+            const projectLinks = document.querySelectorAll('.project');
+            const windowBottom = window.innerHeight;
+            
+            projectLinks.forEach(project => {
+                const projectBottom = project.getBoundingClientRect().bottom;
+                if (projectBottom < windowBottom) {
+                    project.classList.add('fade-in');
+                } else {
+                    project.classList.remove('fade-in');
+                }
+            });
+        });
+    };
+
+    document.addEventListener('visibilitychange', function() {
+        const projectLinks = document.querySelectorAll('.project');
+        if (document.visibilityState === 'hidden') {
+            projectLinks.forEach((projectLink) => {
+                projectLink.classList.add('not-hovered');
+            });
+        } else {
+            projectLinks.forEach((projectLink) => {
+                projectLink.classList.remove('not-hovered');
+            });
+        }
+    });
 
     const setupHamburgerMenu = () => {
         const hamburger = document.getElementById('hamburger');

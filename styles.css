@@ -167,6 +167,13 @@ h1 {
     height: 15px;
 }
 
+.project.not-hovered:hover {
+    /* Reset the styles to mimic the non-hovered state */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: none;
+    background-color: var(--color-sidebar);
+}
+
 #projects,
 #duplicated-projects {
     display: flex;
