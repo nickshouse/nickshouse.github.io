@@ -3,15 +3,14 @@
 
 /* Theme Variables */
 :root {
-    --color-text: #fff;
-    --color-bg: #1a1a1a;
-    --color-btn: #fff;
-    --color-sidebar: #272727;
-    --color-footer: #272727;
-    --color-menu: #1a1a1a;
-    --color-hover: rgba(255, 255, 255, 0.1);
+    --color-text: #ABB2BF;
+    --color-bg: #202632;
+    --color-btn: #ABB2BF;
+    --color-sidebar: #2d333f;
+    --color-footer: #2d333f;
+    --color-menu: #2d333f;
+    --color-hover: rgba(97, 175, 239, 0.1);
 }
-
 [data-theme="light"] {
     /* Light theme */
     --color-text: #000;
